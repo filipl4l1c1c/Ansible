@@ -1,0 +1,9 @@
+---
+
+- hosts: all
+  become: true
+  tasks:
+
+  - name: Instaliranje apache2 paketa
+    apt:
+      name: apache2

@@ -1,0 +1,15 @@
+---
+
+- hosts: all
+  become: true
+  tasks:
+
+  - name: Instaliranje nmtui paketa
+    apt:
+      name: network-manager
+
+  - name: Stopiranje apport servisa
+    service:
+      name: apport
+      state: stopped
+

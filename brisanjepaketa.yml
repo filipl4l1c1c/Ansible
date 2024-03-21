@@ -1,0 +1,10 @@
+---
+
+- hosts: all
+  become: true
+  tasks:
+
+  - name: Brisanje apache servera
+    apt:
+      name: apache2
+      state: absent
