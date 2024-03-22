@@ -7,9 +7,11 @@
   - name: Instaliranje nmtui paketa
     apt:
       name: network-manager
+    when: ansible_distribution == "Ubuntu"    
 
   - name: Stopiranje apport servisa
     service:
       name: apport
       state: stopped
+    when: ansible_distribution == "Ubuntu"
 
