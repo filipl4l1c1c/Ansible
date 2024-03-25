@@ -1,0 +1,16 @@
+---
+
+- hosts: all
+  vars_files:
+    - ~/Ansible/vaulted_vars.yml
+  become: true
+  tasks:
+
+  - name: Instaliranje apache2 i php paketa za Ubuntu
+    apt:
+      name:
+          - apache2
+          - libapache2-mod-php
+      state: latest
+      update_cache: yes
+    when: ansible_distribution == "Ubuntu"  
